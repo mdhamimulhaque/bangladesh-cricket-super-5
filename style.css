@@ -11,6 +11,7 @@
     --bg-1:#151515;
     --green:#055902;
     --red:#F20519;
+    --green_light:#0b6607ce;
 } 
 
 
@@ -20,13 +21,43 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
-}
-body{
-    background-color: var(--bg-1);
 }
 
+/* -----> common */
+.section_heading{
+    color: var(--green);
+    font-weight: 600;
+}
+.section_title_2{
+    color: var(--green);
+    font-weight: 600;
+}
 
+.select_button {
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--green);
+    outline: none;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.calculate_btn{
+    width: 100%;
+}
+.select_button:hover{
+    background-color: var(--green_light);
+}
+li{
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+h4{
+    font-weight: 500;
+}
 
 /* -----> slider */
 .carousel-item{
@@ -61,11 +92,70 @@ body{
     font-size: 1.25rem;
 }
 
+/* -----> card */
+.card{
+    height: 330px;
+}
+.selected_items_wrapper{
+    background-color: #055902;
+    padding:20px;
+    height: 330px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: var(--white);
+}
+.selected_items_wrapper h4{
+    color: var(--red);
+}
+
+.budget_wrpper{
+    background-color: var(--red);
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: var(--white);
+}
+input {
+    border: none;
+    outline: none;
+    height: 45px;
+    padding: 10px;
+}
+
+.budget_wrpper p,span{
+    font-size: 20px;
+}
+
+footer{
+    background-color: var(--green);
+}
+
+
+/*=========> media query <==========*/
+
 @media only screen and (max-width: 768px){
 	.carousel-item{
         height:100%;
     }
     .carousel-caption {
         bottom: 20%;
+    }
+    .card{
+        height: auto;
+    }
+    .calculate_btn{
+        width: 35%;
+    }
+
+}
+@media only screen and (max-width: 425px){
+    .calculate_btn{
+        width: 100%;
     }
 }
