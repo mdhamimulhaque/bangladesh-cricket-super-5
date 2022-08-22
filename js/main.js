@@ -44,8 +44,8 @@ function totalExpensesCalculator(players) {
     document.getElementById('calculate_btn').addEventListener('click', function (e) {
         const perPlayer = getInputId('per_player_input');
         const playerExpensesTotal = players * perPlayer;
-        if (isNaN(playerExpensesTotal)) {
-            alert('Your value is empty')
+        if (isNaN(playerExpensesTotal) || perPlayer < 0) {
+            alert('Your value must have any positive number')
         } else {
             player_expenses_value.innerText = playerExpensesTotal;
         }
@@ -60,8 +60,8 @@ document.getElementById('calculate_total_btn').addEventListener("click", functio
 
     const totalExpensesValue = stringToNumber(player_expenses_value.innerText);
     const grandTotal = totalExpensesValue + managerInputValue + coachInputValue;
-    if (isNaN(grandTotal)) {
-        alert('Your value is empty')
+    if (isNaN(grandTotal) || managerInputValue < 0 || coachInputValue < 0) {
+        alert('Your value must have any positive number')
     } else {
         document.getElementById('grand_total').innerText = grandTotal;
     }
