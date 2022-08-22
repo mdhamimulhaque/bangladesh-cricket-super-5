@@ -94,7 +94,7 @@ h4{
 
 /* -----> card */
 .card{
-    height: 330px;
+   width: 45%;
 }
 .selected_items_wrapper{
     background-color: #055902;
@@ -146,9 +146,6 @@ footer{
     .carousel-caption {
         bottom: 20%;
     }
-    .card{
-        height: auto;
-    }
     .calculate_btn{
         width: 35%;
     }
@@ -158,4 +155,7 @@ footer{
     .calculate_btn{
         width: 100%;
     }
+    .card{
+        width: 100%;
+     }
 }
