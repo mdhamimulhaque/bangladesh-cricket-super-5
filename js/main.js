@@ -13,12 +13,6 @@ function stringToNumber(string) {
     const number = parseFloat(string);
     return number;
 }
-//-----> calculate
-function calculate(pLength) {
-    // ---> player length
-    let playerLength = pLength;
-    return playerLength;
-}
 
 // ==========> player added dynamically <==========
 
@@ -37,7 +31,7 @@ for (const button of buttons) {
             CardButtonSelect.style.backgroundColor = '#F20519';
             CardButtonSelect.innerText = 'selected';
             // --->total players selected length
-            let players = calculate(topFivePlayersWrapper.children.length);
+            let players = topFivePlayersWrapper.children.length;
             totalExpensesCalculator(players);
 
         } else {
@@ -65,7 +59,12 @@ document.getElementById('calculate_total_btn').addEventListener("click", functio
 
     const totalExpensesValue = stringToNumber(player_expenses_value.innerText);
     const grandTotal = totalExpensesValue + managerInputValue + coachInputValue;
-    document.getElementById('grand_total').innerText = grandTotal;
+    if (isNaN(grandTotal)) {
+        alert('Your value is empty')
+    } else {
+        document.getElementById('grand_total').innerText = grandTotal;
+    }
+
 
 })
 
