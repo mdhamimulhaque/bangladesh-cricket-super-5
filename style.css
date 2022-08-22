@@ -99,13 +99,14 @@ h4{
 .selected_items_wrapper{
     background-color: #055902;
     padding:20px;
-    height: 330px;
+    max-height: 330px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     color: var(--white);
+    overflow-y: auto;
 }
 .selected_items_wrapper h4{
     color: var(--red);
