@@ -26,6 +26,7 @@ const buttons = document.getElementsByClassName('select_button');
 for (const button of buttons) {
     // -----> children count <-----
     button.addEventListener('click', function (e) {
+        e.stopPropagation();
         const playerLength = topFivePlayersWrapper?.children.length;
         if (playerLength < 5) {
             topFivePlayersWrapper.innerHTML += `
@@ -41,14 +42,31 @@ for (const button of buttons) {
 
 }
 
+//-----> calculate total expenses
 function totalExpensesCalculator(players) {
-    //-----> calculate total
     document.getElementById('calculate_btn').addEventListener('click', function (e) {
+        e.stopPropagation();
         const perPlayer = getInputId('per_player_input');
         const playerExpensesTotal = players * perPlayer;
         player_expenses_value.innerText = playerExpensesTotal;
+        // calculateFinalTotal(playerExpensesTotal);
     })
 }
+
+
+// -----> calculate total
+
+document.getElementById('calculate_total_btn').addEventListener("click", function (e) {
+    e.stopPropagation();
+    const managerInputValue = getInputId('manager_input_field');
+    const coachInputValue = getInputId('coach_input_field');
+
+    const totalExpensesValue = stringToNumber(player_expenses_value.innerText);
+    const grandTotal = totalExpensesValue + managerInputValue + coachInputValue;
+    document.getElementById('grand_total').innerText = grandTotal;
+
+})
+
 
 
 
