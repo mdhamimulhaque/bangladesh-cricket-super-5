@@ -33,7 +33,7 @@
     font-weight: 600;
 }
 
-.select_button {
+.select_button,button {
     padding: 8px 16px;
     color: var(--white);
     background-color: var(--green);
@@ -49,6 +49,9 @@
     width: 100%;
 }
 .select_button:hover{
+    background-color: var(--green_light);
+}
+button:hover{
     background-color: var(--green_light);
 }
 li{
