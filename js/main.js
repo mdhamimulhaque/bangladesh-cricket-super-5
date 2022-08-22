@@ -44,7 +44,12 @@ function totalExpensesCalculator(players) {
     document.getElementById('calculate_btn').addEventListener('click', function (e) {
         const perPlayer = getInputId('per_player_input');
         const playerExpensesTotal = players * perPlayer;
-        player_expenses_value.innerText = playerExpensesTotal;
+        if (isNaN(playerExpensesTotal)) {
+            alert('Your value is empty')
+        } else {
+            player_expenses_value.innerText = playerExpensesTotal;
+        }
+
     })
 }
 
