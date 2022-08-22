@@ -33,7 +33,7 @@
     font-weight: 600;
 }
 
-.select_button,button {
+.select_button,.calculate_btn {
     padding: 8px 16px;
     color: var(--white);
     background-color: var(--green);
@@ -51,7 +51,7 @@
 .select_button:hover{
     background-color: var(--green_light);
 }
-button:hover{
+.calculate_btn:hover{
     background-color: var(--green_light);
 }
 li{

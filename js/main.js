@@ -32,20 +32,22 @@ for (const button of buttons) {
             <li>${e.target.parentNode.children[0].innerText}</li>
             `;
             let players = calculate(topFivePlayersWrapper.children.length);
-            //-----> calculate total
-            document.getElementById('calculate_btn').addEventListener('click', function (e) {
-                e.stopPropagation();
-                const perPlayer = getInputId('per_player_input');
-                const playerExpenses = players * perPlayer;
-                player_expenses_value.innerText = playerExpenses;
-                console.log(playerExpenses)
-            })
+            totalExpensesCalculator(players);
 
         } else {
             alert('You can select 5 players at a time')
         }
     })
 
+}
+
+function totalExpensesCalculator(players) {
+    //-----> calculate total
+    document.getElementById('calculate_btn').addEventListener('click', function (e) {
+        const perPlayer = getInputId('per_player_input');
+        const playerExpensesTotal = players * perPlayer;
+        player_expenses_value.innerText = playerExpensesTotal;
+    })
 }
 
 
