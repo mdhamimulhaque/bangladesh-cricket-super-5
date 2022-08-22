@@ -31,7 +31,18 @@ for (const button of buttons) {
             CardButtonSelect.innerText = 'selected';
             // --->total players selected length
             let players = topFivePlayersWrapper.children.length;
-            totalExpensesCalculator(players);
+
+            //-----> calculate total expenses
+            document.getElementById('calculate_btn').addEventListener('click', function (e) {
+                e.stopImmediatePropagation();
+                const perPlayer = getInputId('per_player_input');
+                const playerExpensesTotal = players * perPlayer;
+                if (isNaN(playerExpensesTotal) || perPlayer < 0) {
+                    alert('Your value must have any positive number')
+                } else {
+                    player_expenses_value.innerText = playerExpensesTotal;
+                }
+            })
 
         } else {
             alert('You can select 5 players at a time')
@@ -39,19 +50,7 @@ for (const button of buttons) {
     })
 }
 
-//-----> calculate total expenses
-function totalExpensesCalculator(players) {
-    document.getElementById('calculate_btn').addEventListener('click', function (e) {
-        const perPlayer = getInputId('per_player_input');
-        const playerExpensesTotal = players * perPlayer;
-        if (isNaN(playerExpensesTotal) || perPlayer < 0) {
-            alert('Your value must have any positive number')
-        } else {
-            player_expenses_value.innerText = playerExpensesTotal;
-        }
 
-    })
-}
 
 // -----> calculate total
 document.getElementById('calculate_total_btn').addEventListener("click", function (e) {
