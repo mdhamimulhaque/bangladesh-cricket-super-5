@@ -26,12 +26,16 @@ const buttons = document.getElementsByClassName('select_button');
 for (const button of buttons) {
     // -----> children count <-----
     button.addEventListener('click', function (e) {
-        e.stopPropagation();
         const playerLength = topFivePlayersWrapper?.children.length;
         if (playerLength < 5) {
             topFivePlayersWrapper.innerHTML += `
-            <li>${e.target.parentNode.children[0].innerText}</li>
-            `;
+            <li>${e.target.parentNode.children[0].innerText}</li>`;
+            // --- >disabled button
+            const CardButtonSelect = e.target.parentNode.children[2];
+            CardButtonSelect.setAttribute('disabled', 'true');
+            CardButtonSelect.style.backgroundColor = 'red';
+            CardButtonSelect.innerText = 'selected';
+            // console.log()
             let players = calculate(topFivePlayersWrapper.children.length);
             totalExpensesCalculator(players);
 
@@ -45,11 +49,9 @@ for (const button of buttons) {
 //-----> calculate total expenses
 function totalExpensesCalculator(players) {
     document.getElementById('calculate_btn').addEventListener('click', function (e) {
-        e.stopPropagation();
         const perPlayer = getInputId('per_player_input');
         const playerExpensesTotal = players * perPlayer;
         player_expenses_value.innerText = playerExpensesTotal;
-        // calculateFinalTotal(playerExpensesTotal);
     })
 }
 
@@ -57,7 +59,6 @@ function totalExpensesCalculator(players) {
 // -----> calculate total
 
 document.getElementById('calculate_total_btn').addEventListener("click", function (e) {
-    e.stopPropagation();
     const managerInputValue = getInputId('manager_input_field');
     const coachInputValue = getInputId('coach_input_field');
 
