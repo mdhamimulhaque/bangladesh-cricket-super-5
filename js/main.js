@@ -1,6 +1,5 @@
 const topFivePlayersWrapper = document.getElementById('top_5_list');
 const player_expenses_value = document.getElementById('player_expenses_value');
-// const perPlayerInput = document.getElementById('per_player_input');
 
 // ==========> common function <==========
 // ----->get input id & return value
@@ -9,13 +8,13 @@ function getInputId(idName) {
     const finalOutput = stringToNumber(inputId.value);
     return finalOutput;
 }
+// -----> string converter
 function stringToNumber(string) {
     const number = parseFloat(string);
     return number;
 }
 
 // ==========> player added dynamically <==========
-
 const buttons = document.getElementsByClassName('select_button');
 // -----> buttons select
 for (const button of buttons) {
@@ -38,7 +37,6 @@ for (const button of buttons) {
             alert('You can select 5 players at a time')
         }
     })
-
 }
 
 //-----> calculate total expenses
@@ -50,9 +48,7 @@ function totalExpensesCalculator(players) {
     })
 }
 
-
 // -----> calculate total
-
 document.getElementById('calculate_total_btn').addEventListener("click", function (e) {
     const managerInputValue = getInputId('manager_input_field');
     const coachInputValue = getInputId('coach_input_field');
@@ -64,8 +60,6 @@ document.getElementById('calculate_total_btn').addEventListener("click", functio
     } else {
         document.getElementById('grand_total').innerText = grandTotal;
     }
-
-
 })
 
 
