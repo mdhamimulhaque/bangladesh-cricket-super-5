@@ -88,8 +88,12 @@ h4{
     bottom: 25%;
     position: absolute;
 }
-.carousel-caption h2{
+.carousel-caption h2,.five{
     font-size: 3.438rem;
+    font-family: var(--font_2);
+}
+.five{
+    color: var(--red);
 }
 .carousel-caption p{
     font-size: 1.25rem;

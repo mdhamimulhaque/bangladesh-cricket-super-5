@@ -23,6 +23,7 @@ function calculate(pLength) {
 // ==========> player added dynamically <==========
 
 const buttons = document.getElementsByClassName('select_button');
+// -----> buttons select
 for (const button of buttons) {
     // -----> children count <-----
     button.addEventListener('click', function (e) {
@@ -30,12 +31,12 @@ for (const button of buttons) {
         if (playerLength < 5) {
             topFivePlayersWrapper.innerHTML += `
             <li>${e.target.parentNode.children[0].innerText}</li>`;
-            // --- >disabled button
+            // ---> >disabled button
             const CardButtonSelect = e.target.parentNode.children[2];
             CardButtonSelect.setAttribute('disabled', 'true');
-            CardButtonSelect.style.backgroundColor = 'red';
+            CardButtonSelect.style.backgroundColor = '#F20519';
             CardButtonSelect.innerText = 'selected';
-            // console.log()
+            // --->total players selected length
             let players = calculate(topFivePlayersWrapper.children.length);
             totalExpensesCalculator(players);
 
