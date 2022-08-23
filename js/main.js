@@ -29,12 +29,13 @@ for (const button of buttons) {
             CardButtonSelect.setAttribute('disabled', 'true');
             CardButtonSelect.style.backgroundColor = '#F20519';
             CardButtonSelect.innerText = 'selected';
-            // --->total players selected length
-            let players = topFivePlayersWrapper.children.length;
+
 
             //-----> calculate total expenses
             document.getElementById('calculate_btn').addEventListener('click', function (e) {
                 e.stopImmediatePropagation();
+                // --->total players selected length
+                let players = topFivePlayersWrapper.children.length;
                 const perPlayer = getInputId('per_player_input');
                 const playerExpensesTotal = players * perPlayer;
                 if (isNaN(playerExpensesTotal) || perPlayer < 0) {
